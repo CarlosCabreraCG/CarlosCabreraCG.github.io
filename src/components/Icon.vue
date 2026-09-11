@@ -1,0 +1,29 @@
+<script setup>
+const props = defineProps({
+  name: String,
+  class: { type: String, default: "w-6 h-6" }
+});
+
+const icons = {
+  react: `<svg viewBox="0 0 256 228" class="${props.class}" fill="none"><circle cx="128" cy="114" r="21.5" fill="currentColor"/><ellipse cx="128" cy="114" rx="110" ry="42" stroke="currentColor" strokeWidth="9"/><ellipse cx="128" cy="114" rx="110" ry="42" stroke="currentColor" strokeWidth="9" transform="rotate(60 128 114)"/><ellipse cx="128" cy="114" rx="110" ry="42" stroke="currentColor" strokeWidth="9" transform="rotate(120 128 114)"/></svg>`,
+  tailwind: `<svg viewBox="0 0 256 154" class="${props.class}" fill="currentColor"><path d="M128 41.4c-23 0-36.7 11.5-46 34.3 13.8-11.4 28.7-15.5 43.7-9.2 8.5 3.6 14.7 10.8 22.7 19.7 13.3 14.8 28.7 32 63.6 32 23 0 36.7-11.5 46-34.3-13.8 11.4-28.7 15.5-43.7 9.2-8.5-3.6-14.7-10.8-22.7-19.7-13.3-14.8-28.7-32-63.6-32zM46 63.4C23 63.4 9.3 74.9 0 97.7c13.8-11.4 28.7-15.5 43.7-9.2 8.5 3.6 14.7 10.8 22.7 19.7C79.7 123 95.1 140.2 130 140.2c23 0 36.7-11.5 46-34.3-13.8 11.4-28.7 15.5-43.7 9.2-8.5-3.6-14.7-10.8-22.7-19.7-13.3-14.8-28.7-32-63.6-32z"/></svg>`,
+  nestjs: `<svg viewBox="0 0 256 256" class="${props.class}" fill="currentColor"><path d="M89.5 128.7c0-18.5-13.6-33.5-30.4-33.5S28.7 110.2 28.7 128.7c0 18.5 13.6 33.5 30.4 33.5s30.4-15 30.4-33.5zm137.8 0c0-18.5-13.6-33.5-30.4-33.5s-30.4 15-30.4 33.5c0 18.5 13.6 33.5 30.4 33.5s30.4-15 30.4-33.5zm-68.9 0c0-18.5-13.6-33.5-30.4-33.5s-30.4 15-30.4 33.5c0 18.5 13.6 33.5 30.4 33.5s30.4-15 30.4-33.5z"/></svg>`,
+  postgres: `<svg viewBox="0 0 256 256" class="${props.class}" fill="currentColor"><path d="M128 20c-48 0-88 18-88 42v132c0 24 40 42 88 42s88-18 88-42V62c0-24-40-42-88-42zm0 20c42 0 68 15 68 22s-26 22-68 22-68-15-68-22 26-22 68-22z"/></svg>`,
+  python: `<svg viewBox="0 0 256 256" class="${props.class}" fill="currentColor"><path d="M126 32c-18 0-32 8-32 24v24h48v8H72c-16 0-28 14-28 32v20c0 18 12 32 28 32h20v-24c0-18 14-32 32-32h56c16 0 28-12 28-28V56c0-16-12-24-28-24h-54zm-14 16c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10zm78 56v24c0 18-14 32-32 32h-56c-16 0-28 12-28 28v52c0 16 8 28 24 28h52c18 0 32-12 32-28v-20h-48v-8h72c16 0 28-14 28-32v-20c0-18-12-32-28-32h-16zm-14 100c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10z"/></svg>`,
+  ai: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v4a4 4 0 0 0 4 4h1v2a4 4 0 0 0 8 0v-2h1a4 4 0 0 0 4-4v-4a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9.5" cy="11" r="1" fill="currentColor"/><circle cx="14.5" cy="11" r="1" fill="currentColor"/></svg>`,
+  typescript: `<svg viewBox="0 0 256 256" class="${props.class}" fill="currentColor"><rect x="20" y="20" width="216" height="216" rx="16"/><path fill="#0a0a0f" d="M60 130h28v70h22v-70h28v-18H60v18zm110-18c-10 0-18 3-24 9-6 6-9 14-9 24 0 9 2 16 8 21 5 5 14 9 26 12 9 2 15 4 18 7 3 2 4 5 4 9 0 4-2 7-5 9-4 2-9 4-16 4-7 0-13-2-17-5-4-3-6-8-7-14h-22c1 12 5 21 13 27 7 6 17 9 29 9 13 0 23-3 30-9 7-6 10-14 10-25 0-7-2-13-5-18-4-5-10-9-19-12-10-3-17-5-20-7-3-3-5-5-5-9s1-7 4-9c3-2 8-3 14-3 6 0 11 1 15 4 4 3 6 7 7 13h21c-1-11-5-19-12-25-7-6-17-9-29-9z"/></svg>`,
+  docker: `<svg viewBox="0 0 256 256" class="${props.class}" fill="currentColor"><path d="M230 120h-22v-22h-22v22h-22v-22h-22v22h-22v-22h-22v22H78v-22H56v22H34c-5 0-9 4-9 9v44c0 30 18 56 44 68 16 7 34 11 53 11h10c34 0 64-13 82-36 13-16 21-37 23-61h15c5 0 9-4 9-9v-22c0-5-4-9-9-9z"/></svg>`,
+  github: `<svg viewBox="0 0 24 24" class="${props.class}" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>`,
+  external: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>`,
+  arrow: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>`,
+  mail: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>`,
+  send: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>`,
+  menu: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>`,
+  close: `<svg viewBox="0 0 24 24" class="${props.class}" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`,
+  sparkle: `<svg viewBox="0 0 24 24" class="${props.class}" fill="currentColor"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2zM19 15l.9 2.6L22 18.5l-2.1.9L19 22l-.9-2.6L16 18.5l2.1-.9L19 15zM5 15l.9 2.6L8 18.5l-2.1.9L5 22l-.9-2.6L2 18.5l2.1-.9L5 15z"/></svg>`,
+};
+</script>
+
+<template>
+  <div v-html="icons[name] || ''"></div>
+</template>
