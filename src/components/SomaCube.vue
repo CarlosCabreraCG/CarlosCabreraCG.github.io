@@ -568,10 +568,10 @@ function assembleFigure(figureName, onDone) {
 }
 
 function assemble(figureName) {
-  if (isAnimating.value) return;   // transición en curso → ignorar
+  if (isAnimating.value) return;   // Bloqueo transiciones en curso
 
   if (isAssembled.value) {
-    // Ya hay una figura armada → desarmar y luego armar la nueva
+    // Desarmar y rearmar
     isAnimating.value = true;
     isAssembled.value = false;
     tweenGroup.removeAll();
@@ -581,7 +581,7 @@ function assemble(figureName) {
       assembleFigure(figureName);
     });
   } else {
-    // Nada armado → armar directamente
+    // Armado directo
     isAnimating.value = true;
     isAssembled.value = false;
     tweenGroup.removeAll();

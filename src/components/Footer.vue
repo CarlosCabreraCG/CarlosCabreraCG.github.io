@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center font-bold text-white text-sm">
-          AR
+          CG
         </div>
         <span class="text-sm text-gray-400">
           © {{ new Date().getFullYear() }} Carlos cabrera. Crafted with Vue + Tailwind + Three.js.
