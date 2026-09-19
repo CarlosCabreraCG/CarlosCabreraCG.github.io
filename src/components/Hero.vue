@@ -84,7 +84,7 @@ onBeforeUnmount(() => clearTimeout(timeout));
       </div>
 
       <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto animate-fade-up" style="animation-delay: 0.6s">
-        <div v-for="s in [{ k: '2+', v: 'Años de exp.' }, { k: '30+', v: 'Projects delivered' }, { k: '12', v: 'AI integrations' }, { k: '99.9%', v: 'Uptime SLA' }]" :key="s.v" class="glass rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform">
+        <div v-for="s in [{ k: '2+', v: 'Años de exp.' }, { k: '3+', v: 'Proyectos entregados' }, { k: '12', v: 'AI integrations' }, { k: '99.9%', v: 'Uptime SLA' }]" :key="s.v" class="glass rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform">
           <div class="text-2xl md:text-3xl font-bold gradient-text">{{ s.k }}</div>
           <div class="text-xs md:text-sm text-gray-400 mt-1">{{ s.v }}</div>
         </div>
