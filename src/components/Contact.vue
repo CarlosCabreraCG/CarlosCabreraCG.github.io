@@ -24,34 +24,33 @@ const handleSubmit = (e) => {
     <div class="relative max-w-5xl mx-auto px-6">
       <div class="text-center mb-14 reveal">
         <span class="inline-block px-3 py-1 rounded-full text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 mb-4">
-          // GET IN TOUCH
+          // Contacto
         </span>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
           Let's build <span class="gradient-text">something great</span>
         </h2>
         <p class="text-gray-400 max-w-xl mx-auto">
-          Have a project in mind, a role to fill, or just want to chat about AI and web dev?
-          Drop me a line — I usually reply within 24 hours.
+          ¿Tienes algún proyecto en mente, un puesto que cubrir o simplemente quieres charlar sobre IA y desarrollo web?
         </p>
       </div>
 
       <div class="grid md:grid-cols-5 gap-6 reveal">
         <div class="md:col-span-2 glass rounded-3xl p-7 flex flex-col gap-5">
           <div>
-            <div class="text-xs font-mono text-indigo-300 mb-2">// DIRECT</div>
+            <div class="text-xs font-mono text-indigo-300 mb-2">// CORREO</div>
             <a href="mailto:c.g.cabrera.gallardo@gmail.com" class="text-white hover:text-indigo-300 transition-colors flex items-center gap-3">
               <Icon name="mail" class="w-5 h-5" />
               c.g.cabrera.gallardo@gmail.com
             </a>
           </div>
           <div>
-            <div class="text-xs font-mono text-indigo-300 mb-2">// BASED IN</div>
-            <p class="text-white">Remote · EU timezone</p>
+            <div class="text-xs font-mono text-indigo-300 mb-2">// HORARIO</div>
+            <p class="text-white">Remote · UTC-5</p>
           </div>
           <div>
-            <div class="text-xs font-mono text-indigo-300 mb-2">// SOCIAL</div>
+            <div class="text-xs font-mono text-indigo-300 mb-2">// REDES</div>
             <div class="flex gap-2">
-              <a v-for="i in ['github', 'external']" :key="i" href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-gray-300 hover:text-white hover:border-indigo-400/50 transition-colors">
+              <a v-for="i in ['github', 'external']" :key="i" href="https://github.com/CarlosCabreraCG/" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-gray-300 hover:text-white hover:border-indigo-400/50 transition-colors">
                 <Icon :name="i" class="w-4 h-4" />
               </a>
             </div>
@@ -63,7 +62,7 @@ const handleSubmit = (e) => {
                 <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
-              Typically replies in ~24h
+              O llama al +51 919038856 o enviando un whatsapp
             </div>
           </div>
         </div>
@@ -71,12 +70,12 @@ const handleSubmit = (e) => {
         <form @submit.prevent="handleSubmit" class="md:col-span-3 glass rounded-3xl p-7 space-y-5">
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-xs font-mono text-gray-400 mb-2">NAME</label>
+              <label class="block text-xs font-mono text-gray-400 mb-2">NOMBRE</label>
               <input
                 type="text"
                 v-model="form.name"
                 class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none"
-                placeholder="Jane Doe"
+                placeholder="Juan perez"
                 required
               />
             </div>
@@ -86,13 +85,13 @@ const handleSubmit = (e) => {
                 type="email"
                 v-model="form.email"
                 class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none"
-                placeholder="jane@company.com"
+                placeholder="juan@empresamillonaria.com"
                 required
               />
             </div>
           </div>
           <div>
-            <label class="block text-xs font-mono text-gray-400 mb-2">MESSAGE</label>
+            <label class="block text-xs font-mono text-gray-400 mb-2">MNESAJE</label>
             <textarea
               rows="5"
               v-model="form.message"
@@ -103,7 +102,7 @@ const handleSubmit = (e) => {
           </div>
           <div class="flex items-center justify-between gap-4 flex-wrap">
             <p class="text-xs text-gray-500">
-              By submitting, you agree to be contacted about your inquiry.
+              Se garantiza la  confidencialidad de toda la información laboral.
             </p>
             <button
               type="submit"
@@ -115,14 +114,14 @@ const handleSubmit = (e) => {
                   <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeOpacity="0.25"/>
                   <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
                 </svg>
-                Sending...
+                Enviando, espera...
               </template>
               <template v-else-if="status === 'sent'">
                 <Icon name="sparkle" class="w-4 h-4" />
-                Message sent!
+                ¡Se envió!
               </template>
               <template v-else>
-                Send message
+                Envia mensaje
                 <Icon name="send" class="w-4 h-4" />
               </template>
             </button>

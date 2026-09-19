@@ -11,11 +11,9 @@ import Icon from './Icon.vue';
           // TECH STACK
         </span>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          Tools I <span class="gradient-text">craft with</span>
+          <span class="gradient-text">Tecnologías</span> que utilizo
         </h2>
-        <p class="text-gray-400 max-w-2xl mx-auto">
-          A focused, modern stack chosen for velocity, scalability and developer joy.
-        </p>
+
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 reveal">
@@ -42,7 +40,7 @@ import Icon from './Icon.vue';
       <div class="mt-16 overflow-hidden reveal">
         <div class="flex gap-6 marquee-track whitespace-nowrap">
           <template v-for="_ in 2">
-            <span v-for="t in ['Redux', 'Zustand', 'React Query', 'Prisma', 'TypeORM', 'FastAPI', 'PyTorch', 'LangChain', 'OpenAI', 'AWS', 'Vercel', 'CI/CD', 'Jest', 'Playwright']" :key="t + Math.random()" class="px-5 py-2 rounded-full glass text-sm text-gray-400">
+            <span v-for="t in ['React Query', 'ThreeJS', 'TypeORM', 'FastAPI', 'PyTorch', 'Tensorflow', 'AWS', 'OpenAI', 'Vercel', 'Render']" :key="t + Math.random()" class="px-5 py-2 rounded-full glass text-sm text-gray-400">
               {{ t }}
             </span>
           </template>

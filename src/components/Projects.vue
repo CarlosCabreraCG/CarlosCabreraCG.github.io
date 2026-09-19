@@ -9,10 +9,10 @@ import ProjectCard from './ProjectCard.vue';
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6 reveal">
         <div>
           <span class="inline-block px-3 py-1 rounded-full text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 mb-4">
-            // SELECTED WORK
+            // Trabajos destacados
           </span>
           <h2 class="text-4xl md:text-5xl font-bold text-white">
-            Recent <span class="gradient-text">projects</span>
+            Algunos <span class="gradient-text">proyectos</span>
           </h2>
         </div>
         <p class="text-gray-400 max-w-md">

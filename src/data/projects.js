@@ -1,56 +1,63 @@
 export const PROJECTS = [
   {
     id: 1,
-    title: "Nimbus SaaS",
-    tagline: "Multi-tenant workspace platform",
+    title: "Diesa Analytics",
+    tagline: "Plataforma de análisis de datos de instrumentación industrial",
     description:
-      "A production-grade SaaS platform with team workspaces, role-based access, real-time collaboration, Stripe billing and a full admin console. Built for scale with clean separation between the API layer and the UI.",
-    tech: ["React", "Tailwind", "NestJS", "PostgreSQL", "Redis", "Stripe"],
+      "Plataforma web para la visualización, análisis y gestión de datos provenientes de sistemas de instrumentación industrial. Permite monitorear mediciones, descargar información y crear dashboards configurables con diferentes widgets de visualización.",
+    tech: ["React", "NestJS", "PostgreSQL"],
     highlights: [
-      "Multi-tenant architecture with row-level security",
-      "Real-time events via WebSockets",
-      "99.9% uptime on a 3-node cluster",
+      "Arquitectura Full Stack con React, NestJS y PostgreSQL",
+      "Integración con APIs REST para la gestión de datos de instrumentación",
+      "Dashboards configurables con widgets de visualización reutilizables",
+      "Visualización y descarga de datos de instrumentación",
     ],
     github: "#",
-    demo: "#",
-    image: "project-saas",
+    demo: "https://d1g3nxko5navps.cloudfront.net/es",
+    image: "project-diesa",
     accent: "from-indigo-500 via-violet-500 to-fuchsia-500",
   },
+
   {
     id: 2,
-    title: "Atlas Agent",
-    tagline: "Autonomous AI research agent",
+    title: "FiRecords",
+    tagline: "Plataforma para el control de gastos de trabajadores",
     description:
-      "An autonomous Python agent that plans, searches the web, reads documents and writes structured reports. Orchestrates multiple LLM calls with tool use, memory and self-reflection loops.",
-    tech: ["Python", "LangChain", "OpenAI", "FastAPI", "ChromaDB", "Docker"],
+      "Aplicación web para registrar y realizar el seguimiento de los gastos de trabajadores durante un mes. Incluye gestión de gastos, almacenamiento de información y un chatbot basado en LLM para interactuar con los datos registrados.",
+    tech: ["React", "Firebase", "LLM", "Chatbot"],
     highlights: [
-      "ReAct loop with tool-calling & memory",
-      "Streaming responses over SSE",
-      "Pluggable tool registry",
+      "Registro y seguimiento mensual de gastos",
+      "Interfaz web desarrollada con React",
+      "Firebase para almacenamiento y gestión de datos",
+      "Chatbot basado en LLM para interactuar con la información",
     ],
     github: "#",
-    demo: "#",
-    image: "project-ai",
+    demo: "https://dbweb2-d46e8.web.app/",
+    image: "project-firecords",
     accent: "from-cyan-400 via-sky-500 to-indigo-500",
   },
+
   {
     id: 3,
-    title: "Pulse Analytics",
-    tagline: "Predictive data dashboard",
+    title: "PixHeart",
+    tagline: "Editor de imágenes con transformación a Pixel Art",
     description:
-      "A real-time analytics dashboard that ingests millions of events, runs forecasting models and surfaces anomalies. Python powers the ETL and ML pipeline; the React frontend renders interactive charts.",
-    tech: ["Python", "Pandas", "scikit-learn", "React", "PostgreSQL", "WebSockets"],
+      "Aplicación desarrollada en Python para procesar imágenes y generar una versión preliminar con estilo Pixel Art. Utiliza técnicas de procesamiento de imágenes y visión por computadora mediante una interfaz gráfica interactiva.",
+    tech: ["Python", "Pillow", "OpenCV", "scikit-learn", "Flet"],
     highlights: [
-      "Time-series forecasting with Prophet / XGBoost",
-      "Anomaly detection on streaming data",
-      "Sub-second chart updates",
+      "Procesamiento y transformación de imágenes a estilo Pixel Art",
+      "Aplicación de técnicas de visión por computadora con OpenCV",
+      "Manipulación de imágenes mediante Pillow",
+      "Interfaz gráfica interactiva desarrollada con Flet",
     ],
-    github: "#",
+    github: "https://github.com/CarlosCabreraCG/PixelArtEditor",
     demo: "#",
-    image: "project-analytics",
+    image: "project-pixelart",
     accent: "from-emerald-400 via-teal-500 to-cyan-500",
   },
 ];
+
+
 
 export const NAV_LINKS = [
   { label: "Home",     href: "#home" },

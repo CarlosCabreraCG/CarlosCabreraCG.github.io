@@ -2,7 +2,11 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import Icon from './Icon.vue';
 
-const roles = ["Fullstack Developer", "AI Engineer", "React + NestJS Specialist", "Python Craftsman"];
+const roles = [ 
+  "AWS - Azure",
+  "Desarrollo de API REST", 
+  "React + NestJS + PostgreSQL", 
+  "Machine Learning + Python"];
 const roleIdx = ref(0);
 const text = ref("");
 const deleting = ref(false);
@@ -52,9 +56,9 @@ onBeforeUnmount(() => clearTimeout(timeout));
         <span class="text-sm text-gray-300">Available for new projects</span>
       </div>
 
-      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-up">
-        <span class="block text-white">Building the web,</span>
-        <span class="block gradient-text">powered by AI.</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-up">
+        <span class="block text-white">Desarrollador Web </span>
+        <span class="block gradient-text">Full Stack</span>
       </h1>
 
       <div class="h-10 mb-8 flex items-center justify-center">
@@ -64,24 +68,23 @@ onBeforeUnmount(() => clearTimeout(timeout));
       </div>
 
       <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 animate-fade-up" style="animation-delay: 0.2s">
-        I design and ship production-grade fullstack applications — from pixel-perfect
-        React interfaces to scalable NestJS APIs — and I weave AI into the stack to
-        solve problems that used to be impossible.
+        Diseño y despliego aplicaciones full-stack listas para producción —desde interfaces en React con precisión de 
+        píxel hasta APIs escalables en NestJS— integrando flujos de trabajo y agentes IA en el desarollo.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.4s">
         <a href="#projects" class="group btn-primary px-7 py-3.5 rounded-xl text-white font-medium inline-flex items-center gap-2">
-          View projects
+          Ver proyectos
           <Icon name="arrow" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
         <a href="#contact" class="group px-7 py-3.5 rounded-xl glass text-white font-medium inline-flex items-center gap-2 hover:border-indigo-400/50 transition-colors">
           <Icon name="mail" class="w-4 h-4" />
-          Get in touch
+          Contáctame
         </a>
       </div>
 
       <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto animate-fade-up" style="animation-delay: 0.6s">
-        <div v-for="s in [{ k: '4+', v: 'Years shipping' }, { k: '30+', v: 'Projects delivered' }, { k: '12', v: 'AI integrations' }, { k: '99.9%', v: 'Uptime SLA' }]" :key="s.v" class="glass rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform">
+        <div v-for="s in [{ k: '2+', v: 'Años de exp.' }, { k: '30+', v: 'Projects delivered' }, { k: '12', v: 'AI integrations' }, { k: '99.9%', v: 'Uptime SLA' }]" :key="s.v" class="glass rounded-2xl p-5 text-center hover:-translate-y-1 transition-transform">
           <div class="text-2xl md:text-3xl font-bold gradient-text">{{ s.k }}</div>
           <div class="text-xs md:text-sm text-gray-400 mt-1">{{ s.v }}</div>
         </div>
