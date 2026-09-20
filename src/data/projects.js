@@ -60,8 +60,8 @@ export const PROJECTS = [
 
 
 export const NAV_LINKS = [
-  { label: "Home",     href: "#home" },
-  { label: "Skills",   href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact",  href: "#contact" },
+  { label: "Perfil",     href: "#home" },
+  { label: "Habilidades",   href: "#skills" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Contacto",  href: "#contact" },
 ];

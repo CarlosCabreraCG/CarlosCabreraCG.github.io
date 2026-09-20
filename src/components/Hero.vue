@@ -53,7 +53,7 @@ onBeforeUnmount(() => clearTimeout(timeout));
           <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
         </span>
-        <span class="text-sm text-gray-300">Available for new projects</span>
+        <span class="text-sm text-gray-300">Disponible para nuevos proyectos</span>
       </div>
 
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-up">

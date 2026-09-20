@@ -7,7 +7,8 @@ import Skills from './components/Skills.vue';
 import Projects from './components/Projects.vue';
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
-import SomaFigure from './components/SomaFigure.vue';
+import SomaBackground from './components/SomaBackground.vue';
+import SomaSpacer from './components/SomaSpacer.vue';
 useScrollReveal();
 
 // Scroll Progress Logic
@@ -83,22 +84,24 @@ onBeforeUnmount(() => {
     <div class="cursor-ring" id="cursorRing"></div>
     <div class="cursor-dot" id="cursorDot"></div>
     
+    <SomaBackground />
+
     <Navbar />
     <main class="relative z-10">
       <Hero />
 
       <!-- Espacio vacío → Camello -->
-      <SomaFigure bleed="50vh" figure="camel" height="80vh" :enter-at="0.25" :leave-at="0.75" :view-size="8"/>
+      <SomaSpacer figure="camel" />
 
       <Skills />
 
       <!-- Espacio vacío → Cristal -->
-      <SomaFigure bleed="50vh" figure="cristal" height="80vh" :enter-at="0.25" :leave-at="0.75" :view-size="8"/>
+      <SomaSpacer figure="cristal" />
 
       <Projects />
 
       <!-- Espacio vacío → Nudo gordiano -->
-      <SomaFigure bleed="50vh" figure="gordian" height="80vh" :enter-at="0.25" :leave-at="0.75" :view-size="8"/>
+      <SomaSpacer figure="gordian" />
 
       <Contact />
     </main>
