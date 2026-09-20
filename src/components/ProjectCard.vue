@@ -1,12 +1,19 @@
 <script setup>
 import { useTilt } from '../composables/useTilt';
 import Icon from './Icon.vue';
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   project: Object,
   index: Number
 });
+const mostrarImg = computed(() => {
+  return props.project && props.project.image == "#"; 
+});
 
+const getImageUrl = (imageName) => {
+  return new URL(`../assets/${imageName}`, import.meta.url).href;
+};
 const { elementRef, handleMove, handleLeave } = useTilt(8);
 </script>
 
@@ -19,10 +26,13 @@ const { elementRef, handleMove, handleLeave } = useTilt(8);
     :style="{ transitionDelay: `${index * 100}ms` }"
   >
     <div class="relative h-56 overflow-hidden">
-      <div :class="['w-full h-full bg-gradient-to-br', project.accent, 'opacity-80']">
+      <div v-if="mostrarImg" :class="['w-full h-full bg-gradient-to-br', project.accent, 'opacity-80']">
         <div class="absolute inset-0 grid-bg opacity-30"></div>
       </div>
-      
+      <div v-else>
+        <img :src="getImageUrl(project.image)" :alt="project.title || 'Project image'"/>
+      </div>
+
       <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/40 to-transparent"></div>
       <div class="absolute top-4 right-4 flex gap-2">
         <a :href="project.github" class="w-9 h-9 rounded-xl glass flex items-center justify-center text-white hover:bg-white/10 transition-colors" aria-label="GitHub">

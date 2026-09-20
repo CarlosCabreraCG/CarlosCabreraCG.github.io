@@ -37,7 +37,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
             <span class="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
           </a>
           <a href="#contact" class="ml-3 px-4 py-2 rounded-xl btn-primary text-white text-sm font-medium">
-            Let's talk
+            Mensaje
           </a>
         </div>
 
@@ -62,7 +62,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
             {{ link.label }}
           </a>
           <a href="#contact" @click="open = false" class="mt-2 px-4 py-3 rounded-xl btn-primary text-white text-center font-medium">
-            Let's talk
+            Enviar
           </a>
         </div>
       </div>

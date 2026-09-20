@@ -12,15 +12,15 @@ export const PROJECTS = [
       "Dashboards configurables con widgets de visualización reutilizables",
       "Visualización y descarga de datos de instrumentación",
     ],
-    github: "#",
+    github: "https://d1g3nxko5navps.cloudfront.net/es",
     demo: "https://d1g3nxko5navps.cloudfront.net/es",
-    image: "project-diesa",
+    image: "DiesaAnalytics.png",
     accent: "from-indigo-500 via-violet-500 to-fuchsia-500",
   },
 
   {
     id: 2,
-    title: "FiRecords",
+    title: "Acocount",
     tagline: "Plataforma para el control de gastos de trabajadores",
     description:
       "Aplicación web para registrar y realizar el seguimiento de los gastos de trabajadores durante un mes. Incluye gestión de gastos, almacenamiento de información y un chatbot basado en LLM para interactuar con los datos registrados.",
@@ -31,9 +31,9 @@ export const PROJECTS = [
       "Firebase para almacenamiento y gestión de datos",
       "Chatbot basado en LLM para interactuar con la información",
     ],
-    github: "#",
+    github: "https://dbweb2-d46e8.web.app/",
     demo: "https://dbweb2-d46e8.web.app/",
-    image: "project-firecords",
+    image: "#",
     accent: "from-cyan-400 via-sky-500 to-indigo-500",
   },
 
@@ -51,8 +51,8 @@ export const PROJECTS = [
       "Interfaz gráfica interactiva desarrollada con Flet",
     ],
     github: "https://github.com/CarlosCabreraCG/PixelArtEditor",
-    demo: "#",
-    image: "project-pixelart",
+    demo: "https://github.com/CarlosCabreraCG/PixelArtEditor",
+    image: "#",
     accent: "from-emerald-400 via-teal-500 to-cyan-500",
   },
 ];

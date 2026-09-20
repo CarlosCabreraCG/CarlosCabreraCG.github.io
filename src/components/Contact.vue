@@ -3,18 +3,8 @@ import { ref } from 'vue';
 import Icon from './Icon.vue';
 
 const form = ref({ name: "", email: "", message: "" });
-const status = ref(null); // 'sending' | 'sent' | null
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  if (!form.value.name || !form.value.email || !form.value.message) return;
-  status.value = 'sending';
-  setTimeout(() => {
-    status.value = 'sent';
-    form.value = { name: "", email: "", message: "" };
-    setTimeout(() => status.value = null, 4000);
-  }, 1200);
-};
+const status = ref(null); // 'sending' | 'sent' | 'error' | null const handleSubmit = () => { status.value = 'sending'; };
 </script>
 
 <template>
@@ -27,7 +17,7 @@ const handleSubmit = (e) => {
           // Contacto
         </span>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          Let's build <span class="gradient-text">something great</span>
+          Empecemos a <span class="gradient-text">desarrollar</span>
         </h2>
         <p class="text-gray-400 max-w-xl mx-auto">
           ¿Tienes algún proyecto en mente, un puesto que cubrir o simplemente quieres charlar sobre IA y desarrollo web?
@@ -66,66 +56,33 @@ const handleSubmit = (e) => {
             </div>
           </div>
         </div>
-
-        <form @submit.prevent="handleSubmit" class="md:col-span-3 glass rounded-3xl p-7 space-y-5">
-          <div class="grid sm:grid-cols-2 gap-5">
+        <form action="https://formsubmit.co/c.g.cabrera.gallardo@gmail.com" method="POST" @submit="handleSubmit" class="md:col-span-3 glass rounded-3xl p-7 space-y-5" > <!-- Configuración de FormSubmit --> 
+          <input type="hidden" name="_subject" value="Nuevo contacto desde mi portfolio"> 
+          <input type="hidden" name="_captcha" value="false"> 
+          <input type="hidden" name="_template" value="table"> 
+          <div class="grid sm:grid-cols-2 gap-5"> 
             <div>
-              <label class="block text-xs font-mono text-gray-400 mb-2">NOMBRE</label>
-              <input
-                type="text"
-                v-model="form.name"
-                class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none"
-                placeholder="Juan perez"
-                required
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-mono text-gray-400 mb-2">EMAIL</label>
-              <input
-                type="email"
-                v-model="form.email"
-                class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none"
-                placeholder="juan@empresamillonaria.com"
-                required
-              />
-            </div>
-          </div>
-          <div>
-            <label class="block text-xs font-mono text-gray-400 mb-2">MNESAJE</label>
-            <textarea
-              rows="5"
-              v-model="form.message"
-              class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none resize-none"
-              placeholder="Tell me about your project, timeline and goals..."
-              required
-            ></textarea>
-          </div>
-          <div class="flex items-center justify-between gap-4 flex-wrap">
-            <p class="text-xs text-gray-500">
-              Se garantiza la  confidencialidad de toda la información laboral.
-            </p>
-            <button
-              type="submit"
-              :disabled="status === 'sending'"
-              class="btn-primary px-6 py-3 rounded-xl text-white font-medium inline-flex items-center gap-2 disabled:opacity-60"
-            >
-              <template v-if="status === 'sending'">
-                <svg class="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeOpacity="0.25"/>
-                  <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                </svg>
-                Enviando, espera...
-              </template>
-              <template v-else-if="status === 'sent'">
-                <Icon name="sparkle" class="w-4 h-4" />
-                ¡Se envió!
-              </template>
-              <template v-else>
-                Envia mensaje
-                <Icon name="send" class="w-4 h-4" />
-              </template>
-            </button>
-          </div>
+              <label class="block text-xs font-mono text-gray-400 mb-2"> NOMBRE </label> 
+              <input type="text" name="name" v-model="form.name" class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none" placeholder="Juan Pérez" required /> 
+            </div> 
+            <div> 
+              <label class="block text-xs font-mono text-gray-400 mb-2"> EMAIL </label> 
+              <input type="email" name="email" v-model="form.email" class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none" placeholder="juan@empresa.com" required /> 
+            </div> 
+          </div> 
+            <div> 
+              <label class="block text-xs font-mono text-gray-400 mb-2"> MENSAJE </label> 
+              <textarea rows="5" name="message" v-model="form.message" class="input-field w-full bg-ink-700/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none resize-none" placeholder="Cuéntame sobre tu proyecto, objetivos y plazos de entrega..." required >
+              </textarea> 
+            </div> <div class="flex items-center justify-between gap-4 flex-wrap"> 
+            <p class="text-xs text-gray-500"> Se garantiza la confidencialidad de toda información enviada. </p> 
+            <button type="submit" :disabled="status === 'sending'" class="btn-primary px-6 py-3 rounded-xl text-white font-medium inline-flex items-center gap-2 disabled:opacity-60" > 
+            <template v-if="status === 'sending'"> <svg class="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" > 
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-opacity="0.25" /> 
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" /> 
+            </svg> Enviando... </template> <template v-else> Enviar <Icon name="send" class="w-4 h-4" /> 
+            </template> </button> 
+          </div> 
         </form>
       </div>
     </div>
