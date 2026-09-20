@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite' // 1. Import the plugin
 export default defineConfig({
   plugins: [
     vue(),
-    vueDevTools(),
+    //vueDevTools(),
     tailwindcss(), // 2. Add it here
   ],
   resolve: {
